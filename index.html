@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./assets/fonts/fonts.css" />
+    <link rel="stylesheet" href="./assets/stylesheet/styles.css" />
+    <title>Notifications page</title>
+  </head>
+  <body>
+    <main>
+      <div class="notifications-container">
+        <header class="notifications-header">
+          <div class="heading-container">
+            <h1>Notifications</h1>
+            <span class="unread-notifications-count">3</span>
+          </div>
+          <button class="mark-as-read" type="button">Mark all as read</button>
+        </header>
+
+        <div class="notifications-wrapper">
+          <article class="notification unread">
+            <img
+              class="user-avatar"
+              src="./assets/images/avatar-mark-webber.webp"
+              alt="mark-webber-avatar"
+            />
+            <div class="notification-content">
+              <p>
+                <a href="/" class="user-name">Mark Webber</a> reacted to your
+                recent post
+                <a href="/" class="post">My first tournament today!</a>
+                <span class="unread-indicator" />
+              </p>
+              <time class="notification-time">1m ago</time>
+            </div>
+          </article>
+
+          <article class="notification unread">
+            <img
+              class="user-avatar"
+              src="./assets/images/avatar-angela-gray.webp"
+              alt="mark-webber-avatar"
+            />
+            <div class="notification-content">
+              <p>
+                <a href="/" class="user-name">Angela Gray</a> followed you
+                <span class="unread-indicator" />
+              </p>
+              <time class="notification-time">5m ago</time>
+            </div>
+          </article>
+
+          <article class="notification unread">
+            <img
+              class="user-avatar"
+              src="./assets/images/avatar-jacob-thompson.webp"
+              alt="mark-webber-avatar"
+            />
+            <div class="notification-content">
+              <p>
+                <a href="/" class="user-name">Jacob Thompson</a> has joined your
+                group
+                <a href="/" class="group">Chess Club</a>
+                <span class="unread-indicator" />
+              </p>
+              <time class="notification-time">1 day ago</time>
+            </div>
+          </article>
+
+          <article class="notification">
+            <img
+              class="user-avatar"
+              src="./assets/images/avatar-rizky-hasanuddin.webp"
+              alt="mark-webber-avatar"
+            />
+            <div class="notification-content">
+              <p>
+                <a href="/" class="user-name">Rizky Hasanuddin</a> sent you a
+                private message
+                <span class="unread-indicator" />
+              </p>
+              <time class="notification-time">5 days ago</time>
+              <a href="/" class="private-message">
+                Hello, thanks for setting up the Chess Club. I've been a member
+                for a few weeks now and I'm already having lots of fun and
+                improving my game.
+              </a>
+            </div>
+          </article>
+
+          <article class="notification">
+            <img
+              class="user-avatar"
+              src="./assets/images/avatar-kimberly-smith.webp"
+              alt="mark-webber-avatar"
+            />
+            <div class="notification-content">
+              <p>
+                <a href="/" class="user-name">Kimberly Smith</a> commented on
+                your picture
+                <span class="unread-indicator" />
+              </p>
+              <time class="notification-time">1 week ago</time>
+            </div>
+            <a href="/" class="notification-image">
+              <img class="image" src="/assets/images/image-chess.webp" alt="" />
+            </a>
+          </article>
+
+          <article class="notification">
+            <img
+              class="user-avatar"
+              src="./assets/images/avatar-nathan-peterson.webp"
+              alt="mark-webber-avatar"
+            />
+            <div class="notification-content">
+              <p>
+                <a href="/" class="user-name">Nathan Peterson</a> reacted to
+                your recent post
+                <a href="/" class="post">
+                  5 end-game strategies to increase your win rate
+                </a>
+                <span class="unread-indicator" />
+              </p>
+              <time class="notification-time">2 weeks ago</time>
+            </div>
+          </article>
+
+          <article class="notification">
+            <img
+              class="user-avatar"
+              src="./assets/images/avatar-anna-kim.webp"
+              alt="mark-webber-avatar"
+            />
+            <div class="notification-content">
+              <p>
+                <a href="/" class="user-name">Anna Kim</a> left the group
+                <a href="/" class="group">Chess Club</a>
+                <span class="unread-indicator" />
+              </p>
+              <time class="notification-time">2 weeks ago</time>
+            </div>
+          </article>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      const markAsReadBtn = document.querySelector('.mark-as-read');
+      const unreadNotifsCount = document.querySelector(
+        '.unread-notifications-count'
+      );
+      markAsReadBtn.addEventListener('click', function () {
+        // Querying all the unread notifs
+        const unreadNotifs = document.querySelectorAll('.unread');
+        // removing the unread class from the notifs
+        unreadNotifs.forEach(function (notif) {
+          notif.classList.remove('unread');
+        });
+        // Setting the notifs count to empty and hiding from view
+        unreadNotifsCount.textContent = '';
+        unreadNotifsCount.style.display = 'none';
+      });
+    </script>
+  </body>
+</html>
